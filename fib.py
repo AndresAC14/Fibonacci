@@ -1,5 +1,5 @@
 import argparse
-import sys
+
 
 def fibonacci(n: int) -> int:
     """
@@ -15,11 +15,13 @@ def fibonacci(n: int) -> int:
     if n in cache:
         return cache[n]
 
-    nth = fibonacci(n-1) + fibonacci(n-2)
+    nth = fibonacci(n - 1) + fibonacci(n - 2)
 
     cache[n] = nth
 
     return nth
+
+
 ########################################################
 '''
 def fibonacci(n: int) -> int:
@@ -39,7 +41,7 @@ def fibonacci(n: int) -> int:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(prog='Fibonacci',
-                                    description='Calculates the n-th Fibonacci number')
+                                     description='Calculates the n-th Fibonacci number')
     parser.add_argument('n', type=int, help="N-th Fib number")
     args = parser.parse_args()
 
