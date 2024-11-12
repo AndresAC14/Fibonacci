@@ -1,6 +1,8 @@
 import argparse
+from functools import cache
 
 
+@cache
 def fibonacci(n: int) -> int:
     """
     Computes de n-th Fibonacci number.
@@ -12,13 +14,8 @@ def fibonacci(n: int) -> int:
     if n < 2:
         return n
 
-    if n in cache:
-        return cache[n]
 
     nth = fibonacci(n - 1) + fibonacci(n - 2)
-
-    cache[n] = nth
-
     return nth
 
 
